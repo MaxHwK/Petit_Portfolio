@@ -1,0 +1,491 @@
+@bleuC: rgb(52, 152, 219);
+@bleuF: rgb(41, 128, 185);
+
+body {
+    position: relative;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+
+    header {
+        background-color: @bleuF;
+        height: 164px;
+        width: 100%;
+
+        h1.title {
+            margin: 0;
+            height: 100px;
+            line-height: 100px;
+            color: white;
+            padding-left: 40px;
+        }
+
+        nav {
+            background-color: @bleuC;
+            height: 64px;
+            width: 100%;
+
+            ul {
+                display: -webkit-flex;
+                display: flex;
+                list-style: none;
+                margin: 0;
+
+                li {
+                    height: 64px;
+                    line-height: 64px;
+                    margin-right: 10px;
+                    padding: 0 10px 0 10px;
+                    cursor: pointer;
+                    min-width: 50px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: rgba(255, 255, 255, .6);
+                    text-decoration: none;
+
+                    a {
+                        height: 100%;
+                        display: block;
+                        height: 64px;
+                        line-height: 64px;
+                        margin-right: 10px;
+                        padding: 0 10px 0 10px;
+                        cursor: pointer;
+                        min-width: 50px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: rgba(255, 255, 255, .6);
+                        text-decoration: none;
+                    }
+                }
+
+                li.active,
+                li:hover {
+                    color: white;
+                    border-bottom: 4px solid white;
+                    height: 60px;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        input#switch {
+            max-height: 0;
+            max-width: 0;
+            opacity: 0;
+            position: absolute;
+        }
+
+        input#switch+label {
+            display: block;
+            position: absolute;
+            height: 30px;
+            width: 50px;
+            border-radius: 15px;
+            background-color: grey;
+            margin-left: 2%;
+            margin-top: 1%;
+            cursor: pointer;
+        }
+
+        input#switch+label:before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 30px;
+            width: 2%;
+            top: 0;
+            left: 0;
+            border-radius: 15px;
+            transition: 0.5s;
+        }
+
+        input#switch+label:after {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 30px;
+            width: 30px;
+            top: 0px;
+            left: 0px;
+            border-radius: 15px;
+            background: white;
+            transition: 0.5s;
+        }
+
+        input#switch:checked+label:before {
+            width: 50px;
+            background: greenyellow;
+            transition: 0.5s;
+        }
+
+        input#switch:checked+label:after {
+            left: 20px;
+        }
+
+        #switch:checked~#page {
+            background-color: darkslategrey;
+            color: #f5f5f5;
+
+            #nom {
+                background: linear-gradient(45deg, lightskyblue, grey);
+
+                ul {
+                    li {
+                        a {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .case {
+                background-color: grey;
+                color: white;
+
+                h1 {
+                    margin-left: 20px;
+                }
+
+                .ligne {
+                    color: white;
+
+                    img {
+
+                        &:hover {
+                            transform: scale(1.1);
+                            background-color: lightskyblue;
+                            border-radius: 20px;
+                            transition: 1s;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .flip {
+                    .flip-card {
+                        border: 1px solid grey;
+
+                        .flip-card-inner {
+                            .flip-card-front {
+                                background-color: darkslategrey;
+                                color: white;
+                                border-radius: 20px;
+                            }
+
+                            .flip-card-back {
+                                background-color: darkgrey;
+                                color: black;
+                                border-radius: 20px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #page {
+            background-color: lightgrey;
+            margin-top: -20px;
+
+            input#switchTout {
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            input#switchTout:checked+label {
+                background: linear-gradient(#e66465, #9198e5);
+                border-radius: 50px;
+                padding: 8px;
+                cursor: pointer;
+            }
+
+            input#switchWeb {
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            input#switchWeb:checked+label {
+                background: linear-gradient(#e66465, #9198e5);
+                border-radius: 50px;
+                padding: 8px;
+                cursor: pointer;
+            }
+
+            input#switchLangue {
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            input#switchLangue:checked+label {
+                background: linear-gradient(#e66465, #9198e5);
+                border-radius: 50px;
+                padding: 8px;
+                cursor: pointer;
+            }
+
+            input#switchAutre {
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            input#switchAutre:checked+label {
+                background: linear-gradient(#e66465, #9198e5);
+                border-radius: 50px;
+                padding: 8px;
+                cursor: pointer;
+            }
+
+            .case {
+                background-color: beige;
+                color: black;
+                width: 80%;
+                border-radius: 15px;
+                border: 1px solid lightskyblue;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                padding: 10px;
+                box-shadow: 5px 2px 2px lightskyblue;
+
+                h1 {
+                    margin-left: 20px;
+                    font-style: italic;
+                    text-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em purple;
+                }
+            }
+
+            #nom {
+                top: 100px;
+                text-align: center;
+                background: linear-gradient(45deg, skyblue, white);
+
+                .moi {
+                    border-radius: 50%;
+                    width: 200px;
+                    height: 200px;
+                }
+
+                ul {
+                    text-align: center;
+
+                    li {
+                        list-style: none;
+                        margin-top: 8px;
+
+                        a {
+                            text-decoration: none;
+                            color: black;
+                        }
+                    }
+
+                    li a:hover {
+                        font-weight: 550;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            #competences {
+                .ligne {
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        margin-top: 15px;
+                        height: 70px;
+
+                        &:hover {
+                            transform: scale(1.1);
+                            background-color: lightskyblue;
+                            border-radius: 20px;
+                            transition: 1s;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                input#switchWeb:checked+label~.ligne {
+
+                    .francais,
+                    .photoshop,
+                    .anglais,
+                    .android,
+                    .allemand,
+                    .creatif {
+                        display: none;
+                    }
+                }
+
+                input#switchLangue:checked+label~.ligne {
+
+                    .html,
+                    .photoshop,
+                    .css,
+                    .android,
+                    .js,
+                    .creatif {
+                        display: none;
+                    }
+                }
+
+                input#switchAutre:checked+label~.ligne {
+
+                    .html,
+                    .francais,
+                    .css,
+                    .anglais,
+                    .js,
+                    .allemand {
+                        display: none;
+                    }
+                }
+            }
+
+            #experiences_pros {
+                .flip {
+                    display: flex;
+                    justify-content: center;
+
+                    .flip-card {
+                        background-color: transparent;
+                        width: 300px;
+                        height: 200px;
+                        margin: 10px;
+                        border: 1px solid #f1f1f1;
+                        perspective: 1000px;
+
+                        .flip-card-inner {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            transition: transform 0.8s;
+                            transform-style: preserve-3d;
+
+                            .flip-card-front,
+                            .flip-card-back {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 20px;
+                                -webkit-backface-visibility: hidden;
+                                backface-visibility: hidden;
+                                cursor: pointer;
+                            }
+
+                            .flip-card-front {
+                                background-color: lightskyblue;
+                                color: black;
+                                border-radius: 20px;
+                                cursor: pointer;
+
+                                img {
+                                    margin-top: 4px;
+                                    height: 50px;
+                                }
+                            }
+
+                            .flip-card-back {
+                                background-color: lightsalmon;
+                                color: black;
+                                border-radius: 20px;
+                                transform: rotateY(180deg);
+                                filter: invert(100%);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .flip-card:hover .flip-card-inner {
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+
+            #formations {
+                .flip {
+                    display: flex;
+                    justify-content: center;
+
+                    .flip-card {
+                        background-color: transparent;
+                        width: 300px;
+                        height: 200px;
+                        margin: 10px;
+                        border: 1px solid #f1f1f1;
+                        perspective: 1000px;
+
+                        .flip-card-inner {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            transition: transform 0.8s;
+                            transform-style: preserve-3d;
+
+                            .flip-card-front,
+                            .flip-card-back {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 20px;
+                                -webkit-backface-visibility: hidden;
+                                backface-visibility: hidden;
+                                cursor: pointer;
+                            }
+
+                            .flip-card-front {
+                                background-color: lightsteelblue;
+                                color: black;
+                                border-radius: 20px;
+                                cursor: pointer;
+
+                                img {
+                                    margin-top: 4px;
+                                    height: 50px;
+                                }
+                            }
+
+                            .flip-card-back {
+                                background-color: lightcoral;
+                                color: black;
+                                border-radius: 20px;
+                                transform: rotateY(180deg);
+                                filter: invert(100%);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .flip-card:hover .flip-card-inner {
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+
+            #reste {
+                ul {
+                    list-style-type: circle;
+                }
+            }
+        }
+    }
+
+    footer {
+        bottom: 0;
+        background-color: lightgrey;
+        text-align: center;
+        width: 100%;
+        padding: 8px;
+    }
+}
